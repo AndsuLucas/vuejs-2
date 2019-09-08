@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<lista-nomes :lista="nomes"></lista-nomes>
+	</div>
+</body>
+	<script>
+		(function(){
+			Vue.component('lista-nomes',{
+				props:[
+					'lista'
+				],
+
+				template: `
+					<ul>
+						<li v-for="nome in lista" v-text="nome"></li>
+					</ul>
+				`
+			})
+			var root = new Vue({
+				el: "#root",
+				data: {
+					nomes: [
+						'Joao', 'Ana', 'Carlos'
+					]
+				}
+			});
+		
+			
+		})();
+	</script>
+</html>

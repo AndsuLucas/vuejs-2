@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<div v-if="visivel">
+			<h3>Div1</h3>
+		</div>
+		<div v-else>
+			<h3>Div2</h3>
+		</div>
+		<button @click="mostrarEsconder">Esconder</button>
+		<button @click="methodo1">Console.log</button>
+	</div>
+	
+</body>
+	
+	<script type="text/javascript">
+		var root = new Vue({
+			el: "#root",
+			data:{
+				visivel: true
+			},
+			methods: {
+				mostrarEsconder: function(){
+					this.visivel = this.visivel ? false : true;
+				},
+				methodo1: function(){
+					console.log("Experiencia")
+				}
+			}	
+		});
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="../vue.js"></script>
+	<style type="text/css" media="screen">
+		body{
+			background-color: tomato;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<h3>A cor selecionada é: {{cor}}</h3>
+		<img :src="image" alt="" width="30" height="30">
+		<div>
+			<button type="" @click="corBranca">Branco</button>
+			<button type="" @click="corPreta">Preta</button>
+		</div>
+	</div>
+
+</body>
+
+	<script type="text/javascript">
+		//brando data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC
+		//preto https://dicionario.priberam.org/images/dplp/preto.jpg
+		var root = new Vue({
+			el: "#root",
+			data:{
+				cor: "",
+				image: ""
+			},
+			methods:{
+				corPreta: function(){
+					this.cor = "Preta"
+					this.image = "https://dicionario.priberam.org/images/dplp/preto.jpg"
+				},
+				corBranca: function(){
+					this.cor = "Branca"
+					this.image = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC"
+				}
+			}
+		});
+	</script>
+</html>

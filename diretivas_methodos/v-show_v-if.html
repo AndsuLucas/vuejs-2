@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<p v-show="visivel">{{visivel}}</p>
+		<p v-if="visivel">{{visivel}}</p>
+		<button @click="executar">Executar</button>
+	</div>
+</body>
+	<script type="text/javascript">
+		var root = new Vue({
+			el: "#root",
+			data: {
+				visivel: true
+			},
+			methods: {
+				executar: function(){
+					this.visivel = !this.visivel;
+				}
+			}
+		});
+	</script>
+</html>

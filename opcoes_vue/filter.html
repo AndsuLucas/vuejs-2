@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<input v-model="novoNome" @keyup.enter="addNovoNome">
+		<ul v-for="nome in nomes">
+			<li> {{nome | capitalizar}}</li>
+		</ul>
+	</div>
+	
+</body>
+	<script type="text/javascript">
+		(function(){
+			
+			var root = new Vue({
+				el: "#root",
+				data: {
+					novoNome: "",
+					nomes: []
+				},
+				methods:{
+					addNovoNome: function(){
+						this.nomes.push(this.novoNome)
+					}
+				},
+				filters: {
+					capitalizar: function(value){
+						return value.toUpperCase();
+					}
+				}
+			});
+
+		})();
+	</script>
+</html>

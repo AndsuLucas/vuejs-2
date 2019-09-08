@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de frutas</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<input v-model="newFruit">
+		<button @click="addFruit">Inserir</button>
+		<p>Lista de Frutas:</p>
+		<ul v-for="fruit in fruitList">
+			<li>{{fruit}}</li>
+		</ul>
+		<p>Total: {{total}}</p>
+	</div>
+</body>
+	<script type="text/javascript">
+		var root = new Vue({
+			el: "#root",
+			data:{
+				newFruit: "",
+				fruitList: [],
+				total: 0
+			},
+			methods:{
+				addFruit: function(){
+					this.fruitList.push(this.newFruit);
+					this.newFruit = "";
+					this.calculateTotal();
+				},
+				calculateTotal: function(){
+					this.total = this.fruitList.length;
+				}
+			}
+		})
+	</script>
+</html>
