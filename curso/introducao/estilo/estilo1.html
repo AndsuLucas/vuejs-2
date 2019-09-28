@@ -1,0 +1,37 @@
+<script src="./vue.js"></script>
+<style>
+	#app{
+	
+		justify-content: space-between;
+		display: flex;
+	}
+	.demo{
+		width: 100px;
+		height: 100px;
+		background-color: gray;
+	}
+	.c1 {
+		background-color: red !important;
+	}
+	.c2 {
+		background-color: blue;
+	}
+	.c3 {
+		background-color: green;
+	}
+</style>
+<div id="app">
+	<div class="demo" @click="aplicarC1 = !aplicarC1" :class="{c1: aplicarC1}"></div>
+	<div class="demo"></div>
+	<div class="demo"></div>
+</div>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			aplicarC1: false
+		}
+
+	})
+</script>

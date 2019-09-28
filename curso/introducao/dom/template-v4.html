@@ -1,0 +1,24 @@
+<script src="./vue.js"></script>
+
+<div id="app">
+    <p>{{titulo}}</p>
+    <p>{{saudacao()}}</p>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            titulo: "Template parte 3",
+            link: 'http://google.com.br'
+        },
+        methods: {
+            saudacao() {
+                
+                return this.titulo;
+            }
+        }
+
+    })
+</script>

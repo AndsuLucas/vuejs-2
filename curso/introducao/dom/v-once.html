@@ -1,0 +1,22 @@
+<script src="./vue.js"></script>
+
+<div id="app">
+    <p v-once>{{titulo}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            titulo: "Template parte 32",
+            link: 'http://google.com.br'
+        },
+        methods: {
+            saudacao() {
+                
+                return this.titulo;
+            }
+        }
+
+    })
+</script>

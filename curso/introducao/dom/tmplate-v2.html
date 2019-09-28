@@ -1,0 +1,21 @@
+<script src="./vue.js"></script>
+
+<div id="app">
+    <p>{{titulo}}</p>
+    <p>{{saudacao()}}</p>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            titulo: "Template parte 2"
+        }, 
+        methods: {
+            saudacao(){
+                return 'hello World';
+            }
+        }
+        
+    })
+</script>
