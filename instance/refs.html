@@ -1,0 +1,41 @@
+
+    <meta charset="UTF-8">
+
+    <script src="../vue.js"></script>
+
+
+    <div id="app">
+            <h1 ref='course'>{{ course }}</h1>
+            <h2 ref="module">{{ module }}</h2>
+            <button @click="changeCourse">Change course</button>
+            <button @click="changeModule">Change module</button>
+    </div>
+
+<script>
+    (function(){
+        const vm = new Vue({
+            el: '#app',
+            
+            data: {
+                course: 'VueJs',
+                module: 'Vue instance'
+            },
+
+            methods: {
+                changeCourse() {
+                    this.course += '#';
+                    console.log(this.$refs.course);
+                },
+
+                changeModule() {
+                    this.module += '+';
+                }
+            }
+            
+        });
+
+        window.vm = vm;
+    })();
+
+</script>
+</html>

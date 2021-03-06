@@ -1,0 +1,42 @@
+
+    <meta charset="UTF-8">
+    <script src="../vue.js"></script>
+    <div id="app">
+    </div>
+
+<script>
+    (function(){
+        const vm = new Vue({
+            // el: '#app',
+            template: `
+                <div>
+                    <h1 ref='course'>{{ course }}</h1>
+                    <h2 ref="module">{{ module }}</h2>
+                    <button @click="changeCourse">Change course</button>
+                    <button @click="changeModule">Change module</button>
+                </div>
+            `,
+            data: {
+                course: 'VueJs',
+                module: 'Vue instance'
+            },
+
+            methods: {
+                changeCourse() {
+                    this.course += '#';
+                },
+
+                changeModule() {
+                    this.module += '+';
+                }
+            }
+            
+        });
+
+        // vm.$mount('#app')
+        vm.$mount();
+        document.querySelector('#app').appendChild(vm.$el);
+        window.vm = vm;
+    })();
+</script>
+</html>

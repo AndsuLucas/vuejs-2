@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<div id="app">
+        {{ name }} {{ age }} {{ 1  1 }}
+</div>
+
+<script>
+    function myVue(params) {
+        this.$el = document.querySelector(params.el);
+        this.$data = params.data;
+
+        for (let atr in this.$data) {
+            Object.defineProperty(this, atr, {
+                get: () => {
+                    return this.$data[atr];
+                },
+
+                set: value => {
+                    this.$data[atr] = value;
+                }
+            });
+        }
+
+        const regex = new RegExp(/\{\{[\s\w+-/.*]*\}\}/g);
+        const newHtml = this.$el.innerHTML.replace(regex, ($1, index) => {
+            const value = $1.replace(/[\{\]}]/g, '').trim();
+            return this[value] ? this[value] : eval(value); 
+        });
+
+        this.$el.innerHTML = newHtml;
+    }
+
+    const vm = new myVue({
+        el: '#app',
+        data: {
+            name: 'Anderson Lucas',
+            age: 22
+        }
+    });
+
+</script>

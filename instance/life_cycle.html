@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+<script src="../vue.js"></script>
+<div id="app">
+    {{title}}
+    <div>
+        <button @click="title += '#'">#</button>
+        <button @click="$destroy()">Destroy</button>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            title: 'Life Cycle'
+        },
+        beforeCreate() {
+            console.log('beforeCreate');
+        },
+
+        created() {
+            console.log('created');
+        },
+
+        beforeMount() {
+            console.log('beforeMount');
+        },
+
+        mounted() {
+            console.log('mount');
+        },
+
+        beforeUpdate() {
+            console.log('beforeUpdate');
+        },
+
+        updated() {
+            console.log('updated');
+        },
+
+        beforeDestroy() {
+            console.log('beforeDestroy');
+        },
+
+        destroyed() {
+            console.log('destroyed');
+        }
+
+    })
+</script>

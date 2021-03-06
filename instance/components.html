@@ -1,0 +1,47 @@
+
+    <meta charset="UTF-8">
+    <script src="../vue.js"></script>
+    <div id="app">
+        <comp></comp>
+        <comp></comp>
+        <comp></comp>
+    </div>
+
+<script>
+    (function(){
+        //create component
+        Vue.component('comp', {
+            template: `
+                <div>
+                    <h1 ref='course'>{{ course }}</h1>
+                    <h2 ref="module">{{ module }}</h2>
+                    <button @click="changeCourse">Change course</button>
+                    <button @click="changeModule">Change module</button>
+                </div>
+            `,
+            data: function() {
+                return {
+                    course: 'VueJs',
+                    module: 'Vue instance'
+                }
+            },
+    
+            methods: {
+                changeCourse() {
+                    this.course += '#';
+                },
+    
+                changeModule() {
+                    this.module += '+';
+                }
+            }
+        });
+
+        const vm = new Vue({
+            el: '#app',
+        });
+
+        window.vm = vm;
+    })();
+</script>
+</html>
