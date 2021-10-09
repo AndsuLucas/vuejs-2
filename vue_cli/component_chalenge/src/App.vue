@@ -1,0 +1,10 @@
+<template>
+  <v-app>
+    <nav-component></nav-component>
+    <appbar-component></appbar-component>
+    <content-component></content-component>
+    <footer-component></footer-component>
+  </v-app>
+</template>
+<script>
+</script>
